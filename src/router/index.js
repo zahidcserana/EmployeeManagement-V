@@ -21,7 +21,7 @@ export default new Router({
       component: NewEmployee
     },
     {
-      path: '/edit/:employoee_id',
+      path: '/edit/:employee_id',
       name: 'edit-employee',
       component: EditEmployee
     },

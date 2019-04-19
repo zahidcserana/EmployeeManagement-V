@@ -9,6 +9,7 @@
            class="collection-item">
            <div class="chip">{{employee.position}}</div>
            {{employee.employee_id}}:{{employee.name}}
+           
            <router-link class="secondary-content" 
            v-bind:to="{name: 'view-employee', params: {employee_id: employee.employee_id}}">
            <i class="fa fa-eye"></i>
@@ -34,9 +35,12 @@ export default{
         }
     },
     created (){
+        console.log('data');
         db.collection('employees').orderBy('dept').get().then
         (querySnapshot => {
+            console.log('connected');
             querySnapshot.forEach(doc => {
+                 console.log('fetch');
                 console.log(doc.data());
                 const data = {
                     'id': doc.id,
